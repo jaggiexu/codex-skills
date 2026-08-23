@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>论文每日执行计划（8.22-10.15）</title>
+<style>
+:root{--bg:#f3f6fb;--paper:#fff;--ink:#172033;--muted:#667085;--line:#e5eaf1;--blue:#315fd6;--cyan:#087e8b;--purple:#7257c7;--green:#168466;--amber:#bd6b00;--red:#b42318;--shadow:0 12px 32px rgba(28,43,72,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.wrap{max-width:1440px;margin:auto;padding:30px 24px 64px}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;margin-bottom:18px}.eyebrow{color:var(--blue);font-weight:800;letter-spacing:.08em}.hero h1{font-size:34px;line-height:1.2;margin:5px 0 8px}.subtitle{max-width:900px;color:var(--muted);font-size:15px}.controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}button,select{font:inherit;border:1px solid var(--line);border-radius:10px;background:#fff;padding:9px 12px;color:var(--ink)}button{cursor:pointer}button:hover{border-color:#b8c4d8;background:#fafbfe}.danger{color:var(--red)}.primary{color:var(--blue);border-color:#c8d4f5}.file-input{display:none}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:22px;margin:16px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}.section-head h2{margin:0;font-size:21px}.hint{font-size:12px;color:var(--muted)}
+.commitment{background:#172033;color:#fff;border:0;position:relative;overflow:hidden}.commitment:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-150px;top:-190px;background:rgba(255,255,255,.05)}.commitment .section-head,.commitment .pledge,.outcomes{position:relative;z-index:1}.commitment .hint{color:#b8c2d2}.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.outcome{padding:15px;border-radius:13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}.outcome-num{font-size:12px;color:#a8baff;font-weight:800}.outcome h3{margin:3px 0;font-size:16px}.outcome p{margin:0;color:#ccd4df;font-size:12px}.pledge{margin-top:15px;border-left:3px solid #9db3ff;padding:8px 0 8px 13px;font-weight:750}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.fact{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fafcff}.fact b{display:block;margin-bottom:3px}.fact span{font-size:12px;color:var(--muted)}
+.milestones{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.mile{border:1px solid var(--line);border-radius:13px;padding:14px;position:relative;overflow:hidden}.mile:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}.mile-date{color:var(--blue);font-size:12px;font-weight:800}.mile-title{font-weight:800;margin:3px 0}.mile-detail{font-size:12px;color:var(--muted)}
+.summary{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-bottom:17px}.stat{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fafcff}.stat-label{font-size:12px;color:var(--muted)}.stat-value{font-size:20px;font-weight:850}.stat-sub{font-size:11px;color:#98a2b3}.progress-list{display:grid;gap:10px}.progress-row{display:grid;grid-template-columns:115px 1fr 92px;gap:12px;align-items:center}.track{height:9px;border-radius:99px;background:#edf1f6;overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--blue)}.count{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.gantt-shell{overflow:auto;border:1px solid var(--line);border-radius:12px}.gantt{min-width:1400px}.g-head,.g-row{display:grid;grid-template-columns:250px repeat(55,minmax(20px,1fr));align-items:center}.g-head{height:36px;background:#f8fafc;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}.fixed{position:sticky;left:0;z-index:3;background:inherit;height:100%;display:flex;align-items:center;padding:0 12px;border-right:1px solid var(--line)}.date-cell{text-align:center;border-right:1px solid #eef1f5;height:100%;padding-top:8px}.date-cell.weekend{background:#f4f7fc}.g-row{height:40px;border-bottom:1px solid #eef1f5;position:relative}.g-row:last-child{border-bottom:0}.grid-cell{height:40px;border-right:1px solid #f1f3f6}.grid-cell.weekend{background:#fafbfe}.bar{height:23px;color:#fff;border-radius:7px;padding:2px 8px;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.p1{background:var(--blue)}.p2{background:var(--cyan)}.p3{background:var(--purple)}.p4{background:var(--amber)}.p5{background:var(--green)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}.day{padding:17px 0;border-top:1px solid var(--line)}.day:first-child{border-top:0}.day.today{outline:2px solid var(--blue);border-radius:13px;padding:15px;margin:8px 0}.day-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:9px}.day-title{font-size:17px;font-weight:850}.day-meta{font-size:12px;color:var(--muted)}.task{display:grid;grid-template-columns:26px 116px minmax(0,1fr) 52px;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;align-items:start}.task input{width:17px;height:17px;margin-top:4px}.badge{display:inline-block;color:#fff;border-radius:7px;padding:3px 7px;font-size:11px;text-align:center}.task-title{font-weight:800}.task-detail,.accept{font-size:12px;color:var(--muted)}.accept{color:#344054;margin-top:4px}.hours{text-align:right;color:var(--muted)}.task.done{background:#f8fafb}.task.done .task-title,.task.done .task-detail,.task.done .accept,.task.done .hours{text-decoration:line-through;color:#98a2b3}.empty{text-align:center;color:var(--muted);padding:30px}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.rule{border-radius:12px;padding:13px;background:#f8fafc}.rule b{display:block;margin-bottom:3px}.rule span{font-size:12px;color:var(--muted)}
+@media(max-width:1100px){.milestones{grid-template-columns:repeat(3,1fr)}.facts{grid-template-columns:repeat(2,1fr)}.summary{grid-template-columns:repeat(3,1fr)}}@media(max-width:800px){.hero{grid-template-columns:1fr}.controls{justify-content:flex-start}.outcomes,.rules{grid-template-columns:1fr}.milestones{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{padding:20px 12px}.hero h1{font-size:27px}.panel{padding:16px}.facts,.milestones,.summary{grid-template-columns:1fr}.progress-row{grid-template-columns:82px 1fr 70px}.task{grid-template-columns:24px 82px 1fr}.hours{display:none}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="hero"><div><div class="eyebrow">论文专项 · 与总纲同一时间轴</div><h1>论文每日执行计划（8.22-10.15）</h1><div class="subtitle">从“已有初步 GNN baseline”推进到“无泄漏实验协议、完整 Proposed Model、可追溯实验结果与可交导师论文稿”。每天只完成一个主任务，并留下可检查产物。</div></div><div class="controls"><select id="dateFilter" aria-label="日期筛选"><option value="today">今天</option><option value="week" selected>未来 7 天</option><option value="fortnight">未来 14 天</option><option value="all">全部日期</option></select><button id="resetBtn" class="danger">清空完成状态</button><button id="exportBtn" class="primary">导出进度</button><button id="importBtn" class="primary">导入进度</button><input id="importFile" class="file-input" type="file" accept="application/json,.json"></div></header>
+
+<section class="panel commitment"><div class="section-head"><h2>10 月 15 日只验收三项成果</h2><span class="hint">中期结果保留为 preliminary，最终结论只使用新协议结果</span></div><div class="outcomes"><article class="outcome"><div class="outcome-num">成果 01</div><h3>实验协议可信</h3><p>时间顺序 70/15/15 切分；预处理只拟合训练集；所有历史特征和关系边仅来自目标交易之前。</p></article><article class="outcome"><div class="outcome-num">成果 02</div><h3>Proposed Model 可复现</h3><p>Temporal behavior vector → local GraphSAGE → bounded cross-day Transformer 的代码、配置、日志和 checkpoint 可追溯。</p></article><article class="outcome"><div class="outcome-num">成果 03</div><h3>论文形成证据链</h3><p>最终 baseline、主实验、核心消融、窗口分析和误差分析进入第 4 章；第 5 章只总结已有证据。</p></article></div><div class="pledge">执行顺序：先证明数据与图没有看见未来，再追求模型效果；先跑通完整模型，再做消融和调参；没有实验结果，不提前写“模型更优”。</div></section>
+
+<section class="panel"><div class="section-head"><h2>计划基线</h2><span class="hint">已根据论文、答辩意见和 GitHub 代码审查校准</span></div><div class="facts"><div class="fact"><b>保留成果</b><span>现有 GCN/GAT/GraphSAGE 与论文数字一致，作为中期 preliminary baseline 留档。</span></div><div class="fact"><b>必须重做</b><span>随机 80/20、全量预处理、非时间窗口构图和默认阈值不能作为最终协议。</span></div><div class="fact"><b>硬件策略</b><span>128GB 内存足够做完整数据处理；AMD 设备优先 CPU + 分批 + 邻居采样，必要时再启用云端 GPU。</span></div><div class="fact"><b>时间预算</b><span>工作日晚上 2h；周末论文主任务 4h。长训练允许后台运行，但当天必须记录配置与状态。</span></div></div></section>
+
+<section class="panel"><div class="section-head"><h2>阶段里程碑</h2><span class="hint">每个节点必须留下可检查产物</span></div><div class="milestones" id="milestones"></div></section>
+<section class="panel"><div class="section-head"><h2>完成进度</h2><span class="hint">完成状态仅保存在当前浏览器，可导出备份</span></div><div class="summary" id="summary"></div><div class="progress-list" id="progress"></div></section>
+<section class="panel"><div class="section-head"><h2>论文专项甘特图</h2><span class="hint">周末以浅色标记</span></div><div class="gantt-shell"><div class="gantt" id="gantt"></div></div></section>
+<section class="panel"><div class="section-head"><h2>每日主任务</h2><div class="filters" id="filters"></div></div><div id="days"></div></section>
+<section class="panel"><div class="section-head"><h2>固定执行规则</h2><span class="hint">用于防止实验失控</span></div><div class="rules"><div class="rule"><b>实验资产规则</b><span>每次运行必须保存 run_id、代码版本、配置、种子、数据版本、日志、checkpoint 和结果；禁止手工复制来源不明的数字。</span></div><div class="rule"><b>算力降级规则</b><span>若一次实验预计超过 12 小时，先减小样本或邻居上限验证；连续两次因算力失败，再决定云端 GPU，不临时改变研究问题。</span></div><div class="rule"><b>写作规则</b><span>方法章节随实现同步修订；结果章节只写已完成实验；任何“优于”“有效”必须能定位到统一协议下的表格和日志。</span></div></div></section>
+</main>
+<script>
+const START='2026-08-22',END='2026-10-15',KEY='xjy-thesis-plan-20260822-20261015-v1';
+const phases={
+  '协议重构':{cls:'p1',range:['2026-08-22','2026-08-31']},
+  '因果数据与图':{cls:'p2',range:['2026-09-01','2026-09-10']},
+  '最终 Baseline':{cls:'p3',range:['2026-09-11','2026-09-20']},
+  'Proposed Model 与实验':{cls:'p4',range:['2026-09-21','2026-10-05']},
+  '写作与交付':{cls:'p5',range:['2026-10-06','2026-10-15']}
+};
+const milestones=[
+  ['2026-08-31','协议冻结','时间切分、无泄漏预处理、指标、阈值、种子与资产目录形成书面规范。'],
+  ['2026-09-10','因果管线验收','多尺度 temporal vector 与目标中心因果关系数据可在小样本复现。'],
+  ['2026-09-20','Baseline 验收','GCN/GAT/GraphSAGE 在最终统一协议下得到可比较结果。'],
+  ['2026-10-05','实验验收','完整 Proposed Model、主实验、核心消融与窗口分析形成结果索引。'],
+  ['2026-10-15','论文阶段交付','方法、实验、结论章节与代码证据一致，形成可交导师材料包。']
+];
+const rawTasks=[
+['2026-08-22','协议重构','冻结现状与“不覆盖清单”','归档当前论文、答辩意见、仓库提交号和 preliminary 输出；明确旧结果只作中期记录。','产出：现状基线表，列明已完成、须重做、禁止覆盖的文件。'],
+['2026-08-23','协议重构','建立最终实验问题清单','把四个 Research Questions 映射到 baseline、主实验、消融和窗口实验。','产出：RQ—实验—指标—结论映射表。'],
+['2026-08-24','协议重构','建立统一项目入口','补齐可执行入口和目录约定，拆分 data、graph、model、train、evaluate、artifacts。','验收：入口能显示配置并运行最小空流程。'],
+['2026-08-25','协议重构','定义配置与运行编号','统一数据路径、窗口、邻居数、种子、模型超参数和输出目录。','产出：配置模板 + run_id 命名规则。'],
+['2026-08-26','协议重构','实现时间顺序 70/15/15 切分','按 TransactionDT 建立 train/validation/test 边界，保存边界时间与类别统计。','验收：三段时间严格递增，无记录交叉。'],
+['2026-08-27','协议重构','重写无泄漏预处理','缺失值、缩放和类别映射只在训练集拟合，再应用到验证集与测试集。','验收：验证/测试数据不会参与拟合。'],
+['2026-08-28','协议重构','定义最终评估器','实现 Recall、Precision、F1、PR-AUC、ROC-AUC、FNR、FPR 和混淆矩阵。','验收：用手工小样本核对所有指标。'],
+['2026-08-29','协议重构','实现验证集阈值选择','仅在验证集搜索最大 F1 阈值，固定后对测试集评估一次。','产出：阈值曲线和选择记录。'],
+['2026-08-30','协议重构','建立复现实验资产目录','每次运行自动保存配置、种子、版本、日志、checkpoint、预测和指标。','验收：一次假运行生成完整资产包。'],
+['2026-08-31','协议重构','协议里程碑审计','逐项检查时间切分、预处理、阈值、指标和资产追溯，修复阻塞项。','产出：最终实验协议 v1，允许进入数据构建。'],
+
+['2026-09-01','因果数据与图','审计关系字段质量','统计 card/device/email/address 的缺失率、唯一值、组大小和时间覆盖。','产出：关系字段质量表，明确哪些字段可构图。'],
+['2026-09-02','因果数据与图','排除伪关系','规定缺失值、Unknown、中位数填充值不得作为共享实体建立边。','验收：构图输入中无缺失占位关系键。'],
+['2026-09-03','因果数据与图','复核时间窗口依据','对选定关系组合统计 1h/1d/7d/30d 历史间隔和邻居数量分布。','产出：覆盖率、P50/P90/P99 与截断建议。'],
+['2026-09-04','因果数据与图','实现多尺度时间行为特征','为每笔交易计算过去 1h/1d/7d 的间隔、频率、金额偏差和活跃强度。','验收：只读过去记录；首笔/无历史样本有明确定义。'],
+['2026-09-05','因果数据与图','实现目标中心历史索引','按实体键和时间建立可查询历史索引，避免逐行扫描全量数据。','验收：随机抽查 20 笔交易，返回结果时间均早于目标。'],
+['2026-09-06','因果数据与图','实现 0—1 天局部邻居','生成 GraphSAGE 局部关系集，限定关系类型、时间方向和每类邻居上限。','产出：局部邻居样例 + 数量分布。'],
+['2026-09-07','因果数据与图','实现 1—7 天跨日上下文','生成 Transformer 候选上下文，排除 0—1 天重复项并限制 token 数量。','验收：窗口边界、排序和采样规则通过样例测试。'],
+['2026-09-08','因果数据与图','实现 7—30 天汇总特征','只保留统计摘要，不把完整历史节点输入 Transformer。','产出：可选长期汇总特征表。'],
+['2026-09-09','因果数据与图','小样本端到端数据冒烟','用 5万—10万条数据运行切分、预处理、特征、局部图和跨日上下文。','验收：无未来泄漏、无内存爆炸、产物可重复生成。'],
+['2026-09-10','因果数据与图','因果数据管线验收','抽样审计边、特征和窗口；记录运行时间、内存、截断率和已知限制。','产出：数据管线验收报告 + 冻结配置。'],
+
+['2026-09-11','最终 Baseline','迁移 GraphSAGE 到新数据层','复用模型层但替换数据入口、局部关系和评估协议。','验收：小样本 forward/backward 与评估全链通过。'],
+['2026-09-12','最终 Baseline','GraphSAGE 短训练','运行少量 epoch，检查 loss、PR-AUC、耗时、内存和预测分布。','产出：短训练日志 + 阻塞问题清单。'],
+['2026-09-13','最终 Baseline','修复 GraphSAGE 阻塞项','处理不收敛、邻接构建、类别权重、采样或速度问题，一次只改一个因素。','验收：得到稳定可重复的短训练结果。'],
+['2026-09-14','最终 Baseline','运行正式 GraphSAGE','使用冻结协议启动完整训练，保存最佳 checkpoint 和验证集阈值。','产出：GraphSAGE 正式 run 资产包。'],
+['2026-09-15','最终 Baseline','分析 GraphSAGE 正式结果','核对测试指标、混淆矩阵、阈值、失败样本和 preliminary 差异。','产出：GraphSAGE 结果卡。'],
+['2026-09-16','最终 Baseline','迁移并短测 GCN','让 GCN 使用同一输入特征、图、切分、训练和评估接口。','验收：除模型本身外其余协议一致。'],
+['2026-09-17','最终 Baseline','运行正式 GCN','运行冻结配置并保存完整资产；不得用测试集调参。','产出：GCN 正式 run 资产包。'],
+['2026-09-18','最终 Baseline','迁移并短测 GAT','让 GAT 使用同一数据协议，检查注意力层的内存和运行时间。','验收：短训练完成且指标可计算。'],
+['2026-09-19','最终 Baseline','运行正式 GAT','运行冻结配置；若超过算力阈值，记录并采用预先定义的采样降级。','产出：GAT 正式 run 资产包。'],
+['2026-09-20','最终 Baseline','Baseline 公平性验收','统一汇总三模型，检查特征、图、种子、阈值规则和结果来源。','产出：最终 baseline 总表；重新确认 local encoder。'],
+
+['2026-09-21','Proposed Model 与实验','冻结 Proposed Model 接口','明确 attribute embedding、behavior vector、GraphSAGE、Transformer 和分类头的张量接口。','产出：组件表 + shape 表 + 最终结构图草案。'],
+['2026-09-22','Proposed Model 与实验','实现 temporal fusion','将属性 embedding 与 temporal behavior vector 融合，处理缺历史和数值异常。','验收：小 batch 输出范围、shape 和梯度正确。'],
+['2026-09-23','Proposed Model 与实验','接入 local GraphSAGE','使用 0—1 天因果邻居生成每个目标及上下文交易的局部表示。','验收：局部编码不读取目标之后的节点。'],
+['2026-09-24','Proposed Model 与实验','实现时间与关系编码','为每个跨日 token 加入 relative-time encoding 和 relation-type embedding。','验收：不同时间差和关系类型产生可区分表示。'],
+['2026-09-25','Proposed Model 与实验','实现 bounded Transformer','只接收目标 token 与受限的 1—7 天上下文，加入 padding mask 和因果数据约束。','验收：空上下文、满上下文和截断场景均可运行。'],
+['2026-09-26','Proposed Model 与实验','串联完整 forward','融合 local GraphSAGE 表示与 Transformer context，接入 fraud 分类头。','验收：完整模型在极小 batch 正确输出 logits。'],
+['2026-09-27','Proposed Model 与实验','完成训练步冒烟','接入 weighted loss、优化器、验证和 checkpoint；完成一次 backward。','产出：完整模型最小训练日志。'],
+['2026-09-28','Proposed Model 与实验','小规模训练与算力评估','用 5万—10万条数据检查收敛、单 epoch 时间、内存和上下文截断率。','产出：扩大规模建议；决定本机完整跑或云端 GPU。'],
+['2026-09-29','Proposed Model 与实验','修复完整模型阻塞项','只修 NaN、shape、速度、状态污染、无梯度或数据错误，不做无解释调参。','验收：短训练可连续复现。'],
+['2026-09-30','Proposed Model 与实验','启动 Proposed Model 正式训练','使用冻结配置启动正式训练，保存最佳验证 checkpoint。','产出：主实验 run 资产包；长训练可后台继续。'],
+['2026-10-01','Proposed Model 与实验','评估主实验结果','固定验证阈值评估测试集，与最终 GraphSAGE 比较 Recall、F1、PR-AUC。','产出：主实验对比表 v1。'],
+['2026-10-02','Proposed Model 与实验','执行核心消融一','移除 temporal behavior vector，其余配置不变。','产出：消融 run A + 与完整模型差值。'],
+['2026-10-03','Proposed Model 与实验','执行核心消融二','移除 cross-day Transformer context，退化为 local GraphSAGE 路径。','产出：消融 run B + 与完整模型差值。'],
+['2026-10-04','Proposed Model 与实验','执行损失消融与窗口分析','比较 weighted/unweighted loss；在资源允许时比较长程上限，避免同时改多个变量。','产出：消融 run C + 最小窗口敏感性表。'],
+['2026-10-05','Proposed Model 与实验','实验结果一致性审计','核对每个数字对应的配置、日志、checkpoint 和预测；标记不支持的结论。','产出：结果索引 + 实验验收结论。'],
+
+['2026-10-06','写作与交付','更新第 3 章数据协议','把最终时间切分、无泄漏预处理、因果构图、采样和硬件写入方法章节。','产出：3.3 数据方法修订稿。'],
+['2026-10-07','写作与交付','更新 Proposed Model 方法','根据真实代码修订 temporal fusion、GraphSAGE、Transformer、mask、loss 和公式。','产出：3.4 方法章节修订稿，图文代码一致。'],
+['2026-10-08','写作与交付','撰写实验设置','写清数据统计、baseline、公平协议、超参数、种子、阈值、硬件和复现方式。','产出：实验设置完整初稿。'],
+['2026-10-09','写作与交付','撰写最终 baseline 分析','替换 preliminary 主结论；旧结果只保留为阶段说明或移至合适位置。','产出：最终 baseline 表与分析。'],
+['2026-10-10','写作与交付','撰写主实验分析','围绕 RQ 解释 Proposed Model 与 GraphSAGE 的差异，不只复述数值。','产出：主实验结果段落 + 核心图表。'],
+['2026-10-11','写作与交付','撰写消融与窗口分析','说明每个组件是否获得证据支持；如结果不支持，诚实记录并调整结论。','产出：消融/敏感性分析初稿。'],
+['2026-10-12','写作与交付','完成误差分析与局限性','抽样 TP/FP/FN，解释失败场景、代理实体、采样、算力和单数据集限制。','产出：误差分类表 + 局限性段落。'],
+['2026-10-13','写作与交付','重写结论与摘要要点','第 5 章只总结实际完成证据；摘要按问题、方法、结果、意义组织。','产出：第 5 章修订稿 + 摘要要点。'],
+['2026-10-14','写作与交付','全文证据链与格式审计','核对 RQ、方法、结果、表图、引用、数字、术语和代码；模拟导师提出 10 个质疑。','产出：质疑—证据清单 + 修订稿。'],
+['2026-10-15','写作与交付','整理导师阶段提交包','整理论文稿、代码版本、核心图表、结果索引、复现说明和待确认问题。','产出：可交导师的阶段材料包 + 下一阶段清单。']
+];
+function p(s){const[y,m,d]=s.split('-').map(Number);return new Date(Date.UTC(y,m-1,d))}function add(d,n){return new Date(d.getTime()+n*864e5)}function iso(d){return d.toISOString().slice(0,10)}function wd(s){return ['周日','周一','周二','周三','周四','周五','周六'][p(s).getUTCDay()]}function label(s){const[,m,d]=s.split('-');return `${+m}/${+d}`}function diff(a,b){return Math.round((p(b)-p(a))/864e5)}
+const dates=[];for(let d=p(START);d<=p(END);d=add(d,1))dates.push(iso(d));
+const tasks=rawTasks.map((x,i)=>{const weekend=[0,6].includes(p(x[0]).getUTCDay());return{id:`${x[0]}-论文-${i}`,date:x[0],phase:x[1],title:x[2],detail:x[3],accept:x[4],hours:weekend?4:2,slot:weekend?'论文主时段':'晚上'}});
+let done={};try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}let active='全部';
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+function subset(c){return c==='全部'?tasks:tasks.filter(t=>t.phase===c)}
+function renderMilestones(){document.querySelector('#milestones').innerHTML=milestones.map(m=>`<article class="mile"><div class="mile-date">${label(m[0])}</div><div class="mile-title">${m[1]}</div><div class="mile-detail">${m[2]}</div></article>`).join('')}
+function renderProgress(){const cats=['全部',...Object.keys(phases)];document.querySelector('#summary').innerHTML=cats.map(c=>{const a=subset(c),n=a.filter(t=>done[t.id]).length,q=a.length?Math.round(n/a.length*100):0;return `<div class="stat"><div class="stat-label">${c==='全部'?'总任务':c}</div><div class="stat-value">${q}%</div><div class="stat-sub">${n} / ${a.length} 已完成</div></div>`}).join('');document.querySelector('#progress').innerHTML=cats.map(c=>{const a=subset(c),n=a.filter(t=>done[t.id]).length,q=a.length?Math.round(n/a.length*100):0;return `<div class="progress-row"><b>${c==='全部'?'总进度':c}</b><div class="track"><div class="fill" style="width:${q}%"></div></div><div class="count">${n}/${a.length} · ${q}%</div></div>`}).join('')}
+function renderGantt(){let h=`<div class="g-head"><div class="fixed">日期</div>${dates.map(x=>`<div class="date-cell ${[0,6].includes(p(x).getUTCDay())?'weekend':''}" title="${x}">${+x.slice(8)}</div>`).join('')}</div>`;Object.entries(phases).forEach(([name,v])=>{h+=`<div class="g-row"><div class="fixed"><b>${name}</b></div>${dates.map(x=>`<div class="grid-cell ${[0,6].includes(p(x).getUTCDay())?'weekend':''}"></div>`).join('')}<div class="bar ${v.cls}" style="grid-column:${diff(START,v.range[0])+2}/span ${diff(v.range[0],v.range[1])+1}" title="${v.range[0]} 至 ${v.range[1]}">${name}</div></div>`});document.querySelector('#gantt').innerHTML=h}
+function renderFilters(){const cats=['全部',...Object.keys(phases)];document.querySelector('#filters').innerHTML=cats.map(c=>`<button class="pill ${active===c?'active':''}" data-cat="${c}">${c}</button>`).join('');document.querySelectorAll('.pill').forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderDays()})}
+function visible(date){const mode=document.querySelector('#dateFilter').value;if(mode==='all')return true;const n=new Date(),today=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())),x=p(date);if(mode==='today')return x.getTime()===today.getTime();if(mode==='week')return x>=today&&x<=add(today,6);if(mode==='fortnight')return x>=today&&x<=add(today,13);return true}
+function renderDays(){const list=tasks.filter(t=>(active==='全部'||t.phase===active)&&visible(t.date));const n=new Date(),today=`${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;document.querySelector('#days').innerHTML=list.length?list.map(t=>`<section class="day ${t.date===today?'today':''}"><header class="day-head"><div class="day-title">${label(t.date)} · ${wd(t.date)}</div><div class="day-meta">${t.phase} · ${t.slot}</div></header><label class="task ${done[t.id]?'done':''}" data-id="${t.id}"><input type="checkbox" ${done[t.id]?'checked':''}><span><span class="badge ${phases[t.phase].cls}">${t.phase}</span></span><span><div class="task-title">${t.title}</div><div class="task-detail">${t.detail}</div><div class="accept"><b>验收：</b>${t.accept.replace(/^产出：|^验收：/,'')}</div></span><span class="hours">${t.hours}h</span></label></section>`).join(''):'<div class="empty">当前筛选条件下没有任务。</div>';document.querySelectorAll('.task input').forEach(x=>x.onchange=e=>{const el=e.target.closest('.task'),id=el.dataset.id;done[id]=e.target.checked;if(!done[id])delete done[id];el.classList.toggle('done',e.target.checked);save();renderProgress()})}
+document.querySelector('#dateFilter').onchange=renderDays;document.querySelector('#resetBtn').onclick=()=>{if(confirm('确定清空全部论文任务的完成状态吗？')){done={};save();renderProgress();renderDays()}};
+document.querySelector('#exportBtn').onclick=()=>{const payload={format:'xjy-thesis-plan-progress',version:1,plan:{start:START,end:END},exportedAt:new Date().toISOString(),completed:Object.keys(done).filter(id=>done[id])};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`论文计划进度_${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+document.querySelector('#importBtn').onclick=()=>{const i=document.querySelector('#importFile');i.value='';i.click()};document.querySelector('#importFile').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(data.format!=='xjy-thesis-plan-progress'||data.version!==1||!Array.isArray(data.completed))throw new Error('文件格式不正确');const valid=new Set(tasks.map(t=>t.id)),restored=data.completed.filter(id=>valid.has(id));done=Object.fromEntries(restored.map(id=>[id,true]));save();renderProgress();renderDays();alert(`已恢复 ${restored.length} 项完成状态。`)}catch(err){alert(`导入失败：${err.message||'无法读取文件'}`)}};reader.readAsText(f)};
+renderMilestones();renderProgress();renderGantt();renderFilters();renderDays();
+</script>
+</body>
+</html>
