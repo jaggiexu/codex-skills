@@ -5,6 +5,7 @@ Personal reusable skills for ChatGPT and Codex.
 ## Skills
 
 - `generate-daily-plan-html`: Generates a standalone Chinese daily execution-plan HTML with a fixed visual format, Gantt chart, milestones, acceptance criteria, filters, and local progress import/export.
+- `test-case-generate`: Generates one Chinese APP XMind test-case file from requirement documents, screenshots, folders, and accessible authenticated web pages.
 
 ## Structure
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Case Generate"
+  short_description: "从多种需求材料生成中文 APP XMind 测试用例"
+  default_prompt: "Use $test-case-generate with all attached requirement materials to immediately generate one Chinese APP XMind test-case file."
